@@ -123,3 +123,8 @@ client.on('interactionCreate', async (interaction) => {
 });
 
 client.login(process.env.DISCORD_BOT_TOKEN);
+
+if (process.env.MOCK_MODE !== 'true') {
+    console.log = function() {}; // Disable standard console.log
+    console.error = function() {}; // Disable standard console.error (or keep for critical errors)
+}
